@@ -1,42 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "lib": ["DOM", "ES2020"],
-    "importHelpers": false,
-    "declaration": false,
-    "sourceMap": true,
-    "strict": true,
-    "removeComments": false,
-    "importsNotUsedAsValues": "error",
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "strictBindCallApply": true,
-    "stripInternal": true,
-    "resolveJsonModule": true,
+    "allowUnreachableCode": false,
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "jsx": "react",
-    "esModuleInterop": true,
-    "rootDir": "./src",
-    "baseUrl": "./",
-    "noEmit": true
+    "outDir": "dist/esm",
+    "pretty": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "target": "es2017"
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.json"],
-
-  "typedocOptions": {
-    "out": "./docs",
-    "theme": "default",
-    "plugin": "typedoc-plugin-markdown",
-    "readme": "none",
-    "githubPages": false,
-    "disableSources": true,
-    "excludeExternals": true,
-    "excludePrivate": true,
-    "includeVersion": true,
-    "hideGenerator": true
-  }
+  "files": ["src/index.ts"]
 }

@@ -1,0 +1,29 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - '**'
+        tags-ignore:
+            - '*.*'
+        paths-ignore:
+            - README.md
+
+jobs:
+    test-web:
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+
+        steps:
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - uses: actions/checkout@v4
+            - name: Restore Dependency Cache
+              uses: actions/cache@v1
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.OS }}-dependency-cache-${{ hashFiles('**/package.json') }}
+            - run: npm ci
+            - run: npm run build --if-present
+            - run: npm test

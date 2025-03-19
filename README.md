@@ -1,38 +1,23 @@
-# ![chartjs-gauge logo](./samples/logo.svg) chartjs-gauge-v4
+<p align="center"><br><img src="logo.svg" /></p>
+<h3 align="center">Chart.js Gauge</h3>
+<p align="center"><strong><code>@byteowls/chartjs-gauge</code></strong></p>
 
-Simple gauge chart for [Chart.js](https://www.chartjs.org/) >= 4.0.1?
-
-Fork of the [chartjs-gauge-v3](https://github.com/uk-taniyama/chartjs-gauge).
-
-I Tested on Chart.js 4.4.4. Feel free to report any issues if you find bugs.
-
-## Samples
-
-- [Gauge Chart](samples/gauge.html)
-- [Gauge Chart like clock?!](samples/gauge-clock.html)
-- [Gauge Chart with datalabels plugin](samples/gauge-datalabels.html)
-- [Gauge Chart with datalabels plugin displaying labels](samples/gauge-datalabels-labels.html)
+<p align="center">
+    <img src="https://img.shields.io/maintenance/yes/2025?style=flat-square" />
+    <a href="https://github.com/moberwasserlechner/chartjs-gauge/actions?query=workflow%3ACI"><img src="https://img.shields.io/github/actions/workflow/status/moberwasserlechner/chartjs-gauge/ci.yml?style=flat-square" /></a>
+    <a href="https://www.npmjs.com/package/@byteowls/chartjs-gauge"><img src="https://img.shields.io/npm/l/@byteowls/chartjs-gauge?style=flat-square" /></a>
+<br>
+  <a href="https://www.npmjs.com/package/@byteowls/chartjs-gauge"><img src="https://img.shields.io/npm/dw/@byteowls/chartjs-gauge?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@byteowls/chartjs-gauge"><img src="https://img.shields.io/npm/v/@byteowls/chartjs-gauge?style=flat-square" /></a>
+</p>
 
 ## Install
 
-- **yarn** install: `yarn add chart.js chartjs-gauge-v4`
-- **npm** install: `npm install --save chart.js chartjs-gauge-v4`
-
-Use the following command to see samples:
-
-```sh
-$ npx http-server node_modules/chartjs-guage-v4
+```
+npm i chart.js @byteowls/chartjs-gauge
 ```
 
-## Interfaces
-
-- [GaugeControllerChartOptions](docs/interfaces/GaugeControllerChartOptions.md)
-- [NeedleOptions](docs/interfaces/NeedleOptions.md)
-- [ValueLabelOptions](docs/interfaces/ValueLabelOptions.md)
-
-- [GaugeControllerDatasetOptions](docs/interfaces/GaugeControllerDatasetOptions.md)
-
-## Example
+## Config
 
 ```javascript
 var ctx = document.getElementById("canvas").getContext("2d");
@@ -75,4 +60,4 @@ var chart = new Chart(ctx, {
 
 ## License
 
-chartjs-gauge is available under the [MIT license](https://opensource.org/licenses/MIT).
+[MIT](https://opensource.org/licenses/MIT)

@@ -1,94 +1,45 @@
 {
-  "name": "chartjs-gauge-v4",
-  "description": "Gauge chart for chart.js v4",
-  "version": "0.1.0",
-  "license": "MIT",
-  "jsdelivr": "dist/index.min.js",
-  "unpkg": "dist/index.min.js",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "keywords": [
-    "chartjs",
-    "chart.js",
-    "chart",
-    "charts",
-    "gauge"
-  ],
-  "files": [
-    "dist/**",
-    "samples/**",
-    "CHANGELOG.md",
-    "README.md",
-    "index.html",
-    "package.json"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rennan11/chartjs-gauge-v4"
-  },
-  "bugs": {
-    "url": "https://github.com/rennan11/chartjs-gauge-v4/issues"
-  },
-  "scripts": {
-    "prepublishOnly": "npm-run-all -s clean t build:all",
-    "clean": "rimraf dist test-result",
-    "build": "rollup -c",
-    "build:all": "npm-run-all -p build:docs build",
-    "build:watch": "rollup -c --watch",
-    "build:docs": "node src/tools/mkdocs.js",
-    "docs": "typedoc src/index.ts",
-    "lint": "eslint src",
-    "start": "npm-run-all server build:watch",
-    "server": "mdserver .",
-    "t": "karma start karma.conf.js --single-run --coverage --browsers chromeheadless",
-    "test": "karma start karma.conf.js",
-    "test:html": "karma start karma.conf.js --reporters progress,kjhtml",
-    "clean-chartjs": "rimraf modules/chart.js",
-    "clone-chartjs": "git clone --branch v3.1.0 --depth 1 https://github.com/chartjs/Chart.js.git modules/chart.js"
-  },
-  "peerDependencies": {
-    "chart.js": "^4.0.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.19.1",
-    "@babel/preset-env": "^7.19.1",
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^14.1.0",
-    "@rollup/plugin-typescript": "^8.5.0",
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "chart.js": "^3.9.1",
-    "chartjs-test-utils": "^0.4.0",
-    "eslint": "^8.23.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "highlight.js": "^11.6.0",
-    "http-browser": "^0.1.31",
-    "karma": "^6.4.0",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-coverage": "^2.2.0",
-    "karma-jasmine": "^5.1.0",
-    "karma-jasmine-html-reporter": "^2.0.0",
-    "karma-junit-reporter": "^2.0.1",
-    "karma-rollup-preprocessor": "^7.0.8",
-    "karma-spec-reporter": "^0.0.34",
-    "marked": "^4.1.0",
-    "mdserver": "^2.2.6",
-    "moment": "^2.29.4",
-    "moment-timezone": "^0.5.37",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.79.0",
-    "rollup-plugin-dts": "^4.2.2",
-    "rollup-plugin-istanbul": "^3.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.4.0",
-    "typedoc-plugin-markdown": "^3.13.6",
-    "typescript": "^4.8.3",
-    "yargs": "^17.5.1"
-  }
+    "name": "@byteowls/chartjs-gauge",
+    "description": "Gauge for Chart.js v4+",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "dist/esm/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/esm/index.d.ts",
+    "keywords": [
+        "chartjs",
+        "chart.js",
+        "chart",
+        "charts",
+        "gauge"
+    ],
+    "files": [
+        "dist/"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/moberwasserlechner/chartjs-gauge"
+    },
+    "bugs": {
+        "url": "https://github.com/moberwasserlechner/chartjs-gauge/issues"
+    },
+    "scripts": {
+        "build": "npm run clean && tsc",
+        "clean": "rimraf ./dist",
+        "watch": "tsc --watch",
+        "test": "jest",
+        "removePacked": "rimraf -g byteowls-chartjs-gauge-*.tgz",
+        "publishLocally": "npm run removePacked && npm run build && npm pack",
+        "prepublishOnly": "npm run build"
+    },
+    "peerDependencies": {
+        "chart.js": "+4"
+    },
+    "devDependencies": {
+        "@types/jest": "29.5.14",
+        "ts-jest": "29.2.6",
+        "rimraf": "6.0.1",
+        "chart.js": "4.4.8",
+        "typescript": "5.8.2"
+    }
 }

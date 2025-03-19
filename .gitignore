@@ -1,8 +1,4 @@
-dist/**/*
-modules/**/*
-node_modules/**/*
-temp/**/*
-test-result/**/*
+.idea
+dist
+node_modules
 *.tgz
-index.html
-
