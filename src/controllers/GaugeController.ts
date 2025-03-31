@@ -1,7 +1,12 @@
-import type {
+import {
+    ArcElement,
     ArcProps,
     CartesianScaleTypeRegistry,
+    Chart,
+    ChartConfiguration,
+    ChartItem,
     Color,
+    DoughnutController,
     DoughnutControllerChartOptions,
     DoughnutControllerDatasetOptions,
     DoughnutDataPoint,
@@ -12,10 +17,10 @@ import type {
     ScriptableContext,
     UpdateMode,
 } from 'chart.js';
-import {ArcElement, Chart, DoughnutController,} from 'chart.js';
 import {addRoundedRectPath, renderText, toFont, toPercentage, toRadians, toTRBLCorners,} from 'chart.js/helpers';
 
 import type {DeepPartial} from "chart.js/dist/types/utils";
+import patchController from "./patchController";
 
 const needleDefaults: Partial<NeedleOptions> = {
     radius: '10%',
@@ -532,5 +537,13 @@ export interface GaugeControllerOptions extends DoughnutControllerChartOptions {
     valueLabel: ValueLabelOptions;
     value: number;
     minValue: number;
+}
+
+export class GaugeChart<DATA extends unknown[] = GaugeDataPoint[]> extends Chart<'gauge', DATA> {
+    static id = GaugeController.id;
+
+    constructor(item: ChartItem, config: Omit<ChartConfiguration<'gauge', DATA>, 'type'>) {
+        super(item, patchController('gauge', config, GaugeController, ArcElement));
+    }
 }
 
